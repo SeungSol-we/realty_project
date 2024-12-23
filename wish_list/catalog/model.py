@@ -22,6 +22,28 @@ class itemregistration(models.Model) :
     #물건 가격
     가격 = models.IntegerField(help_text="물건의 가격을 입력해 주세요.")
 
+    genre = (
+        ('appliances', '가전제품'),
+        ('furniture', '가구'),
+        ('life', '생활용품'),
+        ('good', '굿즈'),
+        ('accessories', '뷰티티'),
+        ('clothes', '의류'),
+        ('book', '도서/음반'),
+        ('sport', '스포츠/레저'),
+        ('food', '음식/음료'),
+        ('pet', '애완용품'),
+        ('other', '기타')
+    )
+
+    카테고리 = models.CharField(
+        max_length=100,
+        blank=True,
+        null=False,
+        choices=genre,
+        help_text="물건의 종류를 골라구분하세요"
+    )
+
     #물건 참고 이미지지
     이미지 = models.ImageField(upload_to='wish_images/', blank=True, null=True)  
 

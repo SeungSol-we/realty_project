@@ -22,7 +22,6 @@ urlpatterns = [
 ]
 
 # 추가
-
 from django.conf.urls import include
 from django.urls import path
 
